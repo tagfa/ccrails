@@ -1,0 +1,22 @@
+<%= form_for(learninguser) do |f| %>
+  <% if learninguser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(learninguser.errors.count, "error") %> prohibited this learninguser from being saved:</h2>
+
+      <ul>
+      <% learninguser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :furisei %>
+    <%= f.text_field :furisei %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

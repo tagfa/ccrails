@@ -1,0 +1,73 @@
+<style>
+.table{
+ border-collapse: collapse;
+}
+
+.tableitem{
+ height: 3em;
+ width: 200px;
+ background-color:#FFFFCC
+}
+
+.tabledata{
+ width: 700px;
+}
+
+.btn{
+float: right;
+}
+
+</style>
+<p>
+現在登録されているお客様の基本情報を入力してください。<br>
+内容を変更される場合は、項目の右上の「変更」ボタンを押してください。<br>
+</p>
+<%= form_for @member do |f| %>
+<table class="table" border="2">
+	<tbody class="tablebody" >
+		<tr>
+			<td colspan="2">共通情報登録 <%= f.submit "変更" ,:class=>"btn"%></td>
+		</tr>
+		 <tr>
+			<td class="tableitem"><%= f.label :userid,"ユーザID" %></td>
+			<td class="tabledata"><%= f.text_field :userid %></td>
+		</tr>
+		<tr>
+			<td class="tableitem"><%= f.label :password,"パスワード" %></td>
+			<td><%= f.password_field :password %></td>
+		</tr>
+
+		<tr>
+			<td class="tableitem"><%= f.label :name,"名前" %></td>
+			<td><%= f.text_field :name %> </td>
+		</tr>
+		<tr>
+			<td class="tableitem"> <%= f.label :furigana,"フリガナ" %></td>
+			<td> <%= f.text_field :furigana %></td>
+		</tr>
+		<tr>
+			<td class="tableitem"> <%= f.label :mail,"メールアドレス" %></td>
+			<td> <%= f.text_field :mail %></td>
+		</tr>
+		<tr>
+			<td class="tableitem"> <%= f.label :card,"カード会社" %></td>
+			<td> <%= f.select :cardcompany,["AMAX","PIZA"],{include_blank:"選択してください"} %></td>
+		</tr>
+		<tr>
+			<td class="tableitem"> <%= f.label :cardno,"カード番号" %></td>
+			<td> <%= f.text_field :cardno %> </td>
+		</tr>
+		<tr>
+			<td class="tableitem"> <%= f.label :cardlimit,"カード有効期限" %></td>
+			<td> <%= f.select :cardlimit, ["201901","201902","201903","201904"],{include_blank:"選択してください"}  %></td>
+		</tr>
+
+		<tr>
+			<td class="tableitem"> <%= f.label :cardname,"カード名義" %></td>
+			<td> <%= f.text_field :cardname %></td>
+		</tr>
+	</tbody>
+</table>
+
+
+<% end %>

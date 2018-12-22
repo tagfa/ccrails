@@ -1,0 +1,24 @@
+  
+<table border="1">
+        <tbody>
+                 <tr>
+                        <th> 氏名  </th>
+                        <th>ユーザID</th>
+                        <th>パスワード</th>
+                        <th>カード会社</th>
+                        <th>カード番号</th>
+                        <th>カード名義</th>
+                </tr>
+<% @members.each do |member| %>
+                <tr>
+                      <td> <%= member.name %> </td>
+                      <td> <%= member.userid %> </td>
+                      <td> <%= member.password %> </td>
+                      <td> <%= member.cardcompany %> </td>
+                      <td> <%= member.cardno %> </td>
+                      <td> <%= member.cardname %> </td>
+<% end %>
+                </tr>
+        </tbody>
+</table>
+

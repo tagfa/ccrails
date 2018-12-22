@@ -1,0 +1,78 @@
+<style>
+
+.left_content{
+  width:45%;
+  float:left;
+  border:inset ;
+}
+.right_content{
+ width: 50%; 
+ float:right;
+}
+.loginbutton{
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.textarea{
+ border:solid #d3d3d3;
+ word-wrap: break-word;
+ width:85%;
+}
+
+
+</style>
+
+<div class="wrap">
+  <div class="left_content">
+  <p><%= image_tag('members/fkdcardweblogin.jpg') %></p>
+
+ <%= form_for @member do |f| %>
+ <br>  
+
+<table border="0">
+  <tr>
+    <td>
+     <%= f.label(:userid, "ユーザID") %>
+    </td>
+    <td>
+     <%= f.text_field :userid %>
+    </td>
+  </tr>
+  <tr>
+   <td>&nbsp;</td>
+  </tr>
+  <tr> 
+   <td><%= f.label :password, "パスワード" %></td>
+   <td><%= f.password_field :password %></td>
+  </tr>  
+
+  </table>
+  
+    <p>
+    </p>
+
+   <br>
+   <br>
+    <div class="loginbutton">
+      <%= link_to image_tag('members/loginbutton.jpg') , {controller: 'members', action: 'new'}, id: :link, class: :menu %>
+    </div>
+  </div>
+  <div class="right_content">
+ <b> まだ登録されていない方</b><br>
+  <%= link_to image_tag('members/signup.jpg'), {controller: 'members', action: 'error'}, id: :link, class: :menu %>
+ <br> 
+ <br> 
+  <div class="textarea">
+  <font color="red"><b>ログインできないときのヒント</b></font><br>
+  <b>ユーザID、パスワードの入力は正しいですか？</b><br>
+  どちらも半角英数字で入力してください。カナ入力や「CapsLock」キーの状態にご注意ください。
+  </div>
+  </div>
+</div>
+
+
+
+
+
+<% end %>

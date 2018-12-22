@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userid: MyString
+  password: MyString
+  name: MyString
+  furigana: MyString
+  mail: MyString
+  cardcompany: MyString
+  cardno: MyString
+  cardlimit: MyString
+  cardname: MyString
+
+two:
+  userid: MyString
+  password: MyString
+  name: MyString
+  furigana: MyString
+  mail: MyString
+  cardcompany: MyString
+  cardno: MyString
+  cardlimit: MyString
+  cardname: MyString
